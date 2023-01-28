@@ -1,10 +1,8 @@
 <template>
   <v-layout>
-    <v-app-bar color="yellow-lighten-4"><header /></v-app-bar>
-    <v-navigation-drawer color="yellow-lighten-5 " permanent
-      ><leftBar
-    /></v-navigation-drawer>
-    <v-main><cards-coin /></v-main>
+    <v-app-bar color=""><header /></v-app-bar>
+    <v-navigation-drawer color=" " permanent><leftBar /></v-navigation-drawer>
+    <v-main> <cards-coin /></v-main>
   </v-layout>
 </template>
 

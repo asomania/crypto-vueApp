@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <HelloWorld />
+    <Main />
   </div>
 </template>
 
 <script setup>
 //
-import HelloWorld from "./components/HelloWorld.vue";
+import Main from "./components/Main.vue";
 </script>

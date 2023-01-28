@@ -1,5 +1,7 @@
 <template>
   <v-container>
+    <h1 class="d-flex justify-center align-center">Coins</h1>
+    <br />
     <v-row>
       <v-col v-for="coin in coinData">
         <v-card
@@ -31,6 +33,19 @@ export default {
   computed: {
     coinData() {
       return this.$coinData();
+    },
+  },
+  mounted() {
+    // bullish de veriler yanlis siralaniyor
+    setTimeout(() => {
+      this.coinData.sort((a, b) => {
+        return a.market_cap_rank - b.market_cap_rank;
+      });
+    }, 1000);
+  },
+  watch: {
+    coinData(oldValue, newValue) {
+      console.log(oldValue, newValue);
     },
   },
 };
