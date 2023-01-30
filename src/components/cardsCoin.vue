@@ -5,16 +5,11 @@
     <v-row>
       <v-col v-for="coin in coinData">
         <v-card
-          height="200px"
-          width="200px"
+          height="160px"
+          width="150px"
           class="d-flex justify-center align-center flex-column"
         >
-          <v-img
-            :src="coin.image"
-            class="align-end"
-            height="100px"
-            width="70px"
-          >
+          <v-img :src="coin.image" class="align-end" height="60px" width="40px">
           </v-img>
           <v-card-text>
             <h3 class="text-primary">{{ coin.name }}</h3>
@@ -42,11 +37,6 @@ export default {
         return a.market_cap_rank - b.market_cap_rank;
       });
     }, 1000);
-  },
-  watch: {
-    coinData(oldValue, newValue) {
-      console.log(oldValue, newValue);
-    },
   },
 };
 </script>
