@@ -8,6 +8,11 @@
           height="160px"
           width="150px"
           class="d-flex justify-center align-center flex-column"
+          :class="
+            coin.price_change_percentage_24h > 0
+              ? 'bg-success'
+              : 'bg-red-lighten-1'
+          "
         >
           <v-img
             :src="coin.image"
@@ -16,10 +21,18 @@
             width="40px"
           ></v-img>
           <v-card-text>
-            <h3 class="text-primary">{{ coin.name }}</h3>
-            <p>{{ coin.current_price }}</p>
-            <p>{{ coin.price_change_percentage_24h }}</p>
-            <p>{{ coin.total_volume }}</p>
+            <h3 class="text-black font-weight-bold">{{ coin.name }}</h3>
+            <p class="font-weight-bold d-flex">
+              {{ coin.current_price }} <v-icon icon="mdi-currency-usd"></v-icon>
+            </p>
+            <p class="font-weight-bold d-flex">
+              % {{ Math.round(coin.price_change_percentage_24h * 100) / 100 }}
+              <v-icon
+                :icon="
+                  coin.price_change_percentage_24h > 0 ? icons[0] : icons[1]
+                "
+              ></v-icon>
+            </p>
           </v-card-text>
         </v-card>
       </v-col>
@@ -29,6 +42,11 @@
 <script>
 export default {
   inject: ["$coinData"],
+  data() {
+    return {
+      icons: ["mdi-trending-up", "mdi-trending-down"],
+    };
+  },
   computed: {
     coinData() {
       return this.$coinData();
