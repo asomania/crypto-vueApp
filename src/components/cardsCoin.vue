@@ -5,7 +5,7 @@
     <v-row>
       <v-col v-for="coin in coinData">
         <v-card
-          height="160px"
+          height="180px"
           width="150px"
           class="d-flex justify-center align-center flex-column"
           :class="
@@ -14,12 +14,7 @@
               : 'bg-red-lighten-1'
           "
         >
-          <v-img
-            :src="coin.image"
-            class="align-end"
-            height="100px"
-            width="70px"
-          >
+          <v-img :src="coin.image" class="align-end" height="60px" width="50px">
           </v-img>
           <v-card-text>
             <h3 class="text-black font-weight-bold">{{ coin.name }}</h3>

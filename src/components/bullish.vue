@@ -1,6 +1,6 @@
 <template>
   <v-card class="mx-auto" max-width="300">
-    <v-list disabled>
+    <v-list>
       <v-list-subheader>Bullish Crypto Coin</v-list-subheader>
 
       <v-list-item v-for="(coin, i) in newArray2" :key="i">
