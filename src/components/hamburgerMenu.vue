@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="eDrawer" temporary>
+  <v-navigation-drawer v-model="eDrawer" permanent>
     <leftBar />
   </v-navigation-drawer>
 </template>
