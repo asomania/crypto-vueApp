@@ -17,9 +17,10 @@
           <v-img
             :src="coin.image"
             class="align-end"
-            height="60px"
-            width="40px"
-          ></v-img>
+            height="100px"
+            width="70px"
+          >
+          </v-img>
           <v-card-text>
             <h3 class="text-black font-weight-bold">{{ coin.name }}</h3>
             <p class="font-weight-bold d-flex">
@@ -59,11 +60,6 @@ export default {
         return a.market_cap_rank - b.market_cap_rank;
       });
     }, 1000);
-  },
-  watch: {
-    coinData(oldValue, newValue) {
-      console.log(oldValue, newValue);
-    },
   },
 };
 </script>

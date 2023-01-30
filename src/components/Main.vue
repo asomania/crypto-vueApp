@@ -1,6 +1,6 @@
 <template>
   <v-layout>
-    <v-app-bar color="">
+    <v-app-bar>
       <template v-slot:prepend>
         <v-app-bar-nav-icon icon="mdi-hand-coin-outline"></v-app-bar-nav-icon>
         <v-app-bar-nav-icon
@@ -10,9 +10,7 @@
         ></v-app-bar-nav-icon>
       </template>
 
-      <v-app-bar-title class="d-none d-lg-flex d-xl-none"
-        >CoinWallet</v-app-bar-title
-      >
+      <v-app-bar-title>CoinWallet</v-app-bar-title>
 
       <template v-slot:append>
         <v-btn icon="mdi-wallet-outline"></v-btn>
