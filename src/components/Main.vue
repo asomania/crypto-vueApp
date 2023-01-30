@@ -3,14 +3,25 @@
     <v-app-bar color="">
       <template v-slot:prepend>
         <v-app-bar-nav-icon icon="mdi-hand-coin-outline"></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon
+          @click.stop="change"
+          :icon="icons[drawer ? 0 : 1]"
+          class="d-flex d-lg-none d-xl-flex"
+        ></v-app-bar-nav-icon>
       </template>
 
-      <v-app-bar-title>CoinWallet</v-app-bar-title>
+      <v-app-bar-title class="d-none d-lg-flex d-xl-none"
+        >CoinWallet</v-app-bar-title
+      >
 
       <template v-slot:append>
-        <v-btn icon="mdi-wallet-outline"></v-btn> </template
-    ></v-app-bar>
-    <v-navigation-drawer color=" " permanent><leftBar /></v-navigation-drawer>
+        <v-btn icon="mdi-wallet-outline"></v-btn>
+      </template>
+    </v-app-bar>
+    <hamburgerMenu />
+    <v-navigation-drawer class="d-none d-lg-flex d-xl-none"
+      ><leftBar
+    /></v-navigation-drawer>
     <v-main> <cards-coin /></v-main>
   </v-layout>
 </template>
@@ -19,16 +30,20 @@
 import cardsCoin from "./cardsCoin.vue";
 import header from "./header.vue";
 import leftBar from "./leftBar.vue";
+import hamburgerMenu from "./hamburgerMenu.vue";
 //
 export default {
   components: {
     cardsCoin,
     header,
     leftBar,
+    hamburgerMenu,
   },
 
   data() {
     return {
+      icons: ["mdi-close-thick", "mdi-menu"],
+      drawer: false,
       coins: [],
       filteredCoins: [],
       titles: ["#", "Coin", "Price", "Price Chane", "24 Volume"],
@@ -45,9 +60,14 @@ export default {
     this.coins = data;
     this.filteredCoins = data;
   },
-  methods: {},
+  methods: {
+    change() {
+      this.drawer = !this.drawer;
+    },
+  },
   provide() {
     return {
+      $drawer: () => this.drawer,
       $coinData: () => this.coins,
     };
   },

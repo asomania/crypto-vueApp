@@ -5,17 +5,16 @@
     <v-row>
       <v-col v-for="coin in coinData">
         <v-card
-          height="200px"
-          width="200px"
+          height="160px"
+          width="150px"
           class="d-flex justify-center align-center flex-column"
         >
           <v-img
             :src="coin.image"
             class="align-end"
-            height="100px"
-            width="70px"
-          >
-          </v-img>
+            height="60px"
+            width="40px"
+          ></v-img>
           <v-card-text>
             <h3 class="text-primary">{{ coin.name }}</h3>
             <p>{{ coin.current_price }}</p>
