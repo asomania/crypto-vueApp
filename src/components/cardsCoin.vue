@@ -16,8 +16,8 @@
             width="70px"
           >
           </v-img>
-          <v-card-text class="text-black">
-            <h3>{{ coin.name }}</h3>
+          <v-card-text>
+            <h3 class="text-primary">{{ coin.name }}</h3>
             <p>{{ coin.current_price }}</p>
             <p>{{ coin.price_change_percentage_24h }}</p>
             <p>{{ coin.total_volume }}</p>
