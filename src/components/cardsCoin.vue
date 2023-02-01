@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1 class="d-flex justify-center align-center">Coins</h1>
+    <h1 class="text-h2">Coins</h1>
     <br />
     <v-row>
       <v-col v-for="coin in coinData">
@@ -13,7 +13,7 @@
           </v-img>
           <v-card-text>
             <h3 class="text-black font-weight-bold">{{ coin.name }}</h3>
-            <p class="font-weight-bold d-flex">
+            <p class="font-weight-bold">
               {{
                 new Intl.NumberFormat("ja-JP", {
                   style: "currency",
@@ -21,14 +21,16 @@
                 }).format(coin.current_price)
               }}
             </p>
-            <p class="font-weight-bold d-flex">
+            <p class="font-weight-bold">
               % {{ Math.round(coin.price_change_percentage_24h * 100) / 100 }}
+
               <v-icon
                 :class="
                   coin.price_change_percentage_24h > 0
                     ? 'text-green'
                     : 'text-red'
                 "
+                class="box-shadow ma-1"
                 :icon="
                   coin.price_change_percentage_24h > 0 ? icons[0] : icons[1]
                 "
@@ -63,3 +65,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.box-shadow {
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+}
+</style>

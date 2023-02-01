@@ -10,7 +10,7 @@
         ></v-app-bar-nav-icon>
       </template>
 
-      <v-app-bar-title>CoinWallet</v-app-bar-title>
+      <v-app-bar-title class="vappbar">CoinWallet</v-app-bar-title>
 
       <template v-slot:append>
         <v-btn icon="mdi-wallet-outline"></v-btn>
@@ -73,3 +73,13 @@ export default {
   },
 };
 </script>
+
+<style>
+@font-face {
+  font-family: "MyFont";
+  src: url("../styles/head.ttf") format("truetype");
+}
+.vappbar {
+  font-family: "MyFont";
+}
+</style>
