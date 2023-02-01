@@ -1,12 +1,12 @@
 <template>
-  <v-layout>
+  <v-layout class="d-flex">
     <v-app-bar>
       <template v-slot:prepend>
         <v-app-bar-nav-icon icon="mdi-hand-coin-outline"></v-app-bar-nav-icon>
         <v-app-bar-nav-icon
           @click.stop="change"
           :icon="icons[drawer ? 0 : 1]"
-          class="d-flex d-lg-none d-xl-flex"
+          class="d-flex d-m-none d-lg-none"
         ></v-app-bar-nav-icon>
       </template>
 
@@ -16,8 +16,8 @@
         <v-btn icon="mdi-wallet-outline"></v-btn>
       </template>
     </v-app-bar>
-    <hamburgerMenu />
-    <v-navigation-drawer class="d-none d-lg-flex d-xl-none"
+    <hamburgerMenu class="overflow-x-auto" />
+    <v-navigation-drawer class="d-none d-lg-flex d-xl-flex"
       ><leftBar
     /></v-navigation-drawer>
     <v-main @click.stop="drawer ? (drawer = false) : change">

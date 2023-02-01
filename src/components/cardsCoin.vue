@@ -8,22 +8,27 @@
           height="180px"
           width="150px"
           class="d-flex justify-center align-center flex-column"
-          :class="
-            coin.price_change_percentage_24h > 0
-              ? 'bg-success'
-              : 'bg-red-lighten-1'
-          "
         >
           <v-img :src="coin.image" class="align-end" height="60px" width="50px">
           </v-img>
           <v-card-text>
             <h3 class="text-black font-weight-bold">{{ coin.name }}</h3>
             <p class="font-weight-bold d-flex">
-              {{ coin.current_price }} <v-icon icon="mdi-currency-usd"></v-icon>
+              {{
+                new Intl.NumberFormat("ja-JP", {
+                  style: "currency",
+                  currency: "USD",
+                }).format(coin.current_price)
+              }}
             </p>
             <p class="font-weight-bold d-flex">
               % {{ Math.round(coin.price_change_percentage_24h * 100) / 100 }}
               <v-icon
+                :class="
+                  coin.price_change_percentage_24h > 0
+                    ? 'text-green'
+                    : 'text-red'
+                "
                 :icon="
                   coin.price_change_percentage_24h > 0 ? icons[0] : icons[1]
                 "
