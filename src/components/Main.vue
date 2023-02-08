@@ -18,7 +18,7 @@
     </v-app-bar>
     <hamburgerMenu class="overflow-x-auto" />
     <v-navigation-drawer class="d-none d-lg-flex d-xl-flex"
-      ><leftBar
+      ><leftBar class="overflow-x-auto d-flex justify-space-between"
     /></v-navigation-drawer>
     <v-main @click.stop="drawer ? (drawer = false) : change">
       <cards-coin

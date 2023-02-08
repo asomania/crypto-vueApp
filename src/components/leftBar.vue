@@ -1,8 +1,6 @@
 <template>
-  <br />
   <Bullish />
-  <br />
-  <Bearish />
+  <Bearish class="ma-6" />
 </template>
 <script>
 import Bullish from "./bullish.vue";
