@@ -13,7 +13,7 @@
       <v-app-bar-title class="vappbar">CoinWallet</v-app-bar-title>
 
       <template v-slot:append>
-        <v-btn icon="mdi-wallet-outline"></v-btn>
+        <v-btn icon="mdi-wallet-outline" @click="goToWallet"></v-btn>
       </template>
     </v-app-bar>
     <hamburgerMenu class="overflow-x-auto" />
@@ -63,6 +63,9 @@ export default {
   methods: {
     change() {
       this.drawer = !this.drawer;
+    },
+    goToWallet() {
+      this.$router.push("/wallet");
     },
   },
   provide() {
