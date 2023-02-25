@@ -10,8 +10,6 @@
   },
   "dependencies": {
     "@mdi/font": "7.0.96",
-    "@popperjs/core": "^2.11.6",
-    "bootstrap": "^5.2.3",
     "core-js": "^3.8.3",
     "roboto-fontface": "*",
     "vue": "^3.2.13",
@@ -21,6 +19,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.0.3",
+    "autoprefixer": "^10.4.13",
     "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",
     "sass": "^1.55.0",
