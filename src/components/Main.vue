@@ -11,6 +11,14 @@
       </template>
 
       <v-app-bar-title class="vappbar">CoinWallet</v-app-bar-title>
+      <v-spacer></v-spacer>
+      <v-text-field
+        v-model="textSearch"
+        append-icon="mdi-magnify"
+        label="Search"
+        single-line
+        hide-details
+      ></v-text-field>
 
       <template v-slot:append>
         <v-btn icon="mdi-wallet-outline" @click="goToWallet"></v-btn>
